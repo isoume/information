@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -8,24 +9,31 @@ import { Component, OnInit } from '@angular/core';
 export class ListPage implements OnInit {
   private selectedItem: any;
   private icons = [
-    'flask',
     'wifi',
-    'beer',
-    'football',
     'basketball',
     'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
+    'boat'
+  ];
+
+  private activities = [
+    'Le monde',
+    'La finance',
+    'La culture',
+    'le sport'
+  ];
+  private descriptions = [
+    '',
+    '',
+    '',
+    ''
   ];
   public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
-    for (let i = 1; i < 11; i++) {
+  constructor(private router: Router) {
+    for (let i = 0; i < 4; i++) {
       this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+        title: this.activities[i],
+        note:  this.descriptions[i],
+        icon:  this.icons[i]
       });
     }
   }
@@ -36,4 +44,20 @@ export class ListPage implements OnInit {
   // navigate(item) {
   //   this.router.navigate(['/list', JSON.stringify(item)]);
   // }
+
+  voirInformation(conserned) {
+    if(conserned== 'Le monde'){
+      
+      this.router.navigate(['mondiales']);
+    }
+    else
+    if(conserned == 'La finance'){
+      this.router.navigate(['financieres']);
+    }
+    else
+    if(conserned== 'La culture'){
+      this.router.navigate(['culturelles']);
+    }
+    
+  }
 }

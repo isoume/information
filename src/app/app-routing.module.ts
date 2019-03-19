@@ -14,7 +14,13 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'mondiales', loadChildren: './mondiales/mondiales.module#MondialesPageModule' },
+  { path: 'mondiale', loadChildren: './mondiale/mondiale.module#MondialePageModule' },
+  { path: 'financieres', loadChildren: './financieres/financieres.module#FinancieresPageModule' },
+  { path: 'financiere', loadChildren: './financiere/financiere.module#FinancierePageModule' },
+  { path: 'culturelles', loadChildren: './culturelles/culturelles.module#CulturellesPageModule' },
+  { path: 'culturelle', loadChildren: './culturelle/culturelle.module#CulturellePageModule' }
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-icon name="arrow-back" (click)="retourner()"></ion-icon>
+    <ion-title> news </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card>
+      {{article.title}}
+  </ion-card>
+  <ion-card>
+      {{article.description}}
+  </ion-card>
+  <ion-img [src]="article.urlToImage"></ion-img>
+  <ion-card>
+      {{article.content}}
+  </ion-card>
+  
+</ion-content>

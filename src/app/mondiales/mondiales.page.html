@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mondiales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-slides class="slider">
+  
+  <ion-slide *ngFor="let article of donnees?.articles" class="center" style="background-color: #A0FFFF">
+    <ion-card class="thumb-img">
+        <ion-card-header>
+            {{article.title}}
+        </ion-card-header>
+        <ion-content>
+            {{article.description}}
+        </ion-content>
+        <ion-img [src]="article.urlToImage"></ion-img>
+        <ion-card>
+            {{article.content}}
+        </ion-card>
+  </ion-card>
+  </ion-slide>
+</ion-slides>
+</ion-content>

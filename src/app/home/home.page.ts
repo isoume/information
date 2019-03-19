@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  images=["1.jpg","2.jpg","3.jpg","4.jpg","lipson.jpg"];
+  constructor() { }
+
+  ngOnInit() {
+ 
+  }
+
+
 }
